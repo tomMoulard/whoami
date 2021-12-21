@@ -25,6 +25,20 @@ Tiny Go webserver that prints os information and HTTP request to output
 - `port`: give me a port number. (it can be also defined with `WHOAMI_PORT_NUMBER` environment variable) (default: 80)
 - `name`: give me a name. (it can be also defined with `WHOAMI_NAME` environment variable)
 
+### Output
+
+When a client execute a request, the webserver output informations about the incoming request.
+
+Here is an overview of each information:
+
+- `Hostname`: the hostname of the kernel or the name (see [flags](#flags)).
+- `IP`: IPs associated with the container/host IPs. It can be your loopback, the docker host public IP, the vtun IP, ...
+- `RemoteAddr`: the IP:port associated with the client.
+
+Other fields correspond to the request and it's associated headers
+
+See [@darkweaver87 original answer on the subject](https://github.com/traefik/whoami/issues/40#issuecomment-847709302).
+
 ## Examples
 
 ```console
